@@ -1,5 +1,5 @@
 const sketchPad = document.getElementById("sketchpad");
-
+//function for grid making automation
 function makeGrid (rows, cols) {
     sketchPad.style.setProperty("--grid-rows", rows);
     sketchPad.style.setProperty("--grid-cols", cols);
@@ -9,8 +9,25 @@ function makeGrid (rows, cols) {
     };
 };
 
-makeGrid(24, 24);
+makeGrid(16, 16);
+//hovering effect function
+const gridCell = document.querySelectorAll(".grid-cell");
+gridCell.forEach((cell)=>{
+    cell.addEventListener("mouseover", (e)=>{
+        cell.style.background = "black";
+    });
+});
+//reset
+function reset () {
+    gridCell.forEach((cell)=>{
+        cell.style.background = "white";
+    });
+};
 
-const sizeButton = document.getElementById("size-btn");
+//buttons 
+const resetButton = document.getElementById("reset-btn");
 
+resetButton.addEventListener("click", (e)=>{
+    reset();
+})
 
