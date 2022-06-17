@@ -10,17 +10,29 @@ function makeGrid (rows, cols) {
 };
 
 makeGrid(16, 16);
+draw();
 
+
+function clearGrid(){
+    const grid = document.querySelectorAll(".grid-cell");
+    grid.forEach((cell)=>{
+        cell.remove();
+    })
+}
 
 //hovering effect function
-const gridCell = document.querySelectorAll(".grid-cell");
-gridCell.forEach((cell)=>{
-    cell.addEventListener("mouseover", (e)=>{
-        cell.style.background = "black";
-    });
-});
+function draw(){
+    const gridCell = document.querySelectorAll(".grid-cell");
+    gridCell.forEach((cell)=>{
+        cell.addEventListener("mouseover", (e)=>{
+            cell.style.background = "black";
+         });
+     });
+   };
+
 //reset
 function reset () {
+    const gridCell = document.querySelectorAll(".grid-cell");
     gridCell.forEach((cell)=>{
         cell.style.background = "white";
     });
@@ -49,5 +61,25 @@ sizeButton.addEventListener("click", (e)=>{
 
 });
 
-const button16 = document.getElementById("")
+const button16 = document.getElementById("16x16");
+const button32= document.getElementById("32x32");
+const button64= document.getElementById("64x64");
+
+button16.addEventListener("click", (e)=>{
+    clearGrid();
+    makeGrid(16,16)
+    draw();
+});
+
+button32.addEventListener("click", (e)=>{
+   clearGrid();
+   makeGrid(32, 32);
+   draw();
+});
+
+button64.addEventListener("click", (e)=>{
+    clearGrid();
+    makeGrid(64, 64)
+    draw();
+});
 
