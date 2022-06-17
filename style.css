@@ -6,8 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background-color: antiquewhite;
-    font-family: fantasy;
+    background-color: rgb(31, 9, 129);
     font-size: larger;
 }
 
@@ -25,6 +24,20 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(228,40,70,1) 0%, 
     
 }
 
+#heading{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    text-shadow: 0px 0px 25px  rgb(158, 255, 177);
+}
+
+#name-tag{
+    position: inherit;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0px 0px 8px rgb(21, 18, 14);
+    color: beige;
+}
 
 #sketchpad{
     display: grid;
@@ -45,12 +58,13 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(228,40,70,1) 0%, 
 }
 
 .btn{
+
     height: 100px;
     width: 100px;
     border-radius: 100px;
     background-color: aliceblue;
     border: none;
-    font-family: fantasy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     box-shadow: 3px 3px 20px black;
 }
@@ -64,5 +78,42 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(228,40,70,1) 0%, 
 
 .grid-cell{
     border:solid 0.3px black;
+
+}
+
+.hide{
+    opacity: 0;
+    display: none;
+}
+
+.show{
+    -webkit-animation: fadein 0.8s linear;
+    margin: 20px;
+    border-radius: 50px;
+    border: none;
+    height: 50px;
+    display: inline-block;
+
+}
+.show:hover{
+    background-color: coral;
+    transform: scale(1.3);
+    transition: 0.5s;
+}
+
+@keyframes fadein {
+   from{
+       opacity: 0;
+   }
+   to{
+       opacity:1;
+   } 
+}
+
+#size-btn-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
 }
